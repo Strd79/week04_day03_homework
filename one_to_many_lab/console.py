@@ -12,3 +12,10 @@ owner_repository.save(owner_1)
 owner_repository.save(owner_2)
 animal_repository.save(animal_1)
 animal_repository.save(animal_2)
+
+# res = animal_repository.select_all()
+# for animal in res:
+#     print(animal.__dict__)
+
+# owner = owner_repository.select(2)
+# print(owner.__dict__)

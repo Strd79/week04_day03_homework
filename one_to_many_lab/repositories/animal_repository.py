@@ -13,3 +13,15 @@ def save(animal):
 
 def select_all():
     animals = []
+    sql = "SELECT * FROM animals"
+    results = run_sql(sql)
+    for row in results:
+        owner = owner_repository.select(row['owner_id'])
+        animal = Animal(row['name'], row['age'], row['breed'], owner, row['id'])
+        animals.append(animal)
+    return animals
+
+def delete(id):
+    sql = "DELETE FROM animals WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
